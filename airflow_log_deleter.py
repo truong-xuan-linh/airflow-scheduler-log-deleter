@@ -24,7 +24,7 @@ with DAG(
         default_args=args) as dag:
 
         clean_scheduler_logs = BashOperator(task_id='clean_scheduler_logs',
-                            bash_command="find $AIRFLOW_HOME/logs/scheduler -type f -mtime +7 -delete")
+                            bash_command="find $AIRFLOW_HOME/logs -type f -mtime +7 -delete")
        
 
         clean_scheduler_logs
